@@ -1,0 +1,70 @@
+.main-container{
+height: 700px;
+width: 1400px;
+background-color: rgb(250, 244, 244);
+display: flex;
+flex-direction: column;
+align-items: left;
+  
+  
+}
+
+.border-upper{
+  height: 80px;
+  width: 1400px;
+  background-color: rgb(253, 185, 82);
+  display:flex;
+
+
+}
+
+.toolbar-left{
+  width: 400px;
+  height: 620px;
+  background-color: rgb(253, 129, 98);
+  
+}
+
+
+h1{
+margin-left: 20px;
+}
+
+
+h3{
+  margin-left: 20px;
+  color: white;
+}
+
+.text-container{
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.body-container{
+  display: inline-flex;
+  
+}
+
+.inputs{
+  display:flex;
+  margin: 30px;
+  gap: 0.5rem;
+}
+
+button{
+  background-color: greenyellow;
+  border-style: hidden;
+  width: 100px;
+}
+
+td{
+  border: 1px solid black;
+}
+
+
+tr {
+  border: 1px solid black;
+}
