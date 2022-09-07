@@ -1,0 +1,5 @@
+git status  --> check status
+
+git add .  --> prepare new or changed files to be commited
+
+git commit -m "name"  --> commit changed or new files
