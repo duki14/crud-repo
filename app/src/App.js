@@ -1,8 +1,49 @@
 
 import './App.css';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+
+
+  // data setter --> my data is defined within an empty array
+  const [data, setData] = useState([]);
+  // querry selector(for components)
+  const [q, setQ] = useState([]);
+
+  // useEffect --> fire up my api data func (done when changes occur)
+  useEffect(() =>{
+    // input url that contains .json data in our local state / or has api key
+    fetch('http://localhost:3000/data')
+    // takes an input function = the response that comes from our server/turns http response data into .json data
+    .then(response => {return response.json()})
+    // return our previous function input .json data and gives it to our app components
+    .then((json) => {return setData(json)})
+  },[]);
+
+  // table component
+  function Table({data}){
+
+    const columns = data[0] && Object.keys(data[0]);
+
+    return(
+      <>
+      <table cellPadding={4} cellSpacing={4}>
+         <thead>
+            <tr>{data[0] && columns.map((heading) =>{
+              return <th>{heading}</th>
+            })}</tr>
+         </thead>
+         <tbody>
+          {data.map((row) =>{
+            return <tr>{columns.map((column1) =>{return <td>{row[column1]}</td>})}</tr>
+          })}
+         </tbody>
+      </table>
+      </>
+    )
+    
+  }
+
 
 
   return (
@@ -34,53 +75,9 @@ function App() {
       <button type='button'>Search</button>
       </div>
 
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>User type</th>
-          <th>Created date</th>
-          <th>City</th>
-          <th>Adress</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+      <div className='table'>
+        <Table data={data}/>
+      </div>
 
     </div>
 

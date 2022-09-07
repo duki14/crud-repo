@@ -60,11 +60,9 @@ button{
   width: 100px;
 }
 
-td{
-  border: 1px solid black;
-}
-
-
-tr {
-  border: 1px solid black;
+.table{
+  
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-width: 2px;
 }
