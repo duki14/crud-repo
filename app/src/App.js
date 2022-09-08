@@ -9,6 +9,11 @@ function App() {
   const [data, setData] = useState([]);
   // querry selector(for components)
   const [q, setQ] = useState([]);
+  // set complete number of users
+  const [usertype, setUsertype] = useState(['All']);
+  // data setter for dropdown --> specify keys for searching
+  const [searchParam] = useState(['Name','Surname']);
+
 
   // useEffect --> fire up my api data func (done when changes occur)
   useEffect(() =>{
@@ -19,6 +24,7 @@ function App() {
     // return our previous function input .json data and gives it to our app components
     .then((json) => {return setData(json)})
   },[]);
+
 
   // table component
   function Table({data}){
@@ -41,9 +47,47 @@ function App() {
       </table>
       </>
     )
-    
+
   }
 
+   
+  // search logic --> indexOf(q) > -1  matches our two strings (search input with db.json data) and returns the first character(letter) that matches our input
+  // if there is no search match --> we get negative one (-1)
+  // Name (parameter) --> has to match our .json data objet key
+  // Usertype (parameter) --> has to match our .json data objet key
+  /* only searchbar functionality
+  const search = (rows) =>{
+    return rows.filter((row) =>{
+      return row.Name.toLowerCase().indexOf(q) > -1})
+    }
+  */
+
+  const search = (rows) =>{
+
+    return rows.filter((row) =>{
+
+      if(row.Usertype === usertype){
+        return searchParam.some((newitem) =>{
+          return (
+            row[newitem]
+            .toString()
+            .toLowerCase()
+            .indexOf(q.toLowerCase()) > -1
+          )
+        })
+      }
+        else if(usertype === 'All'){
+          return searchParam.some((newitem) =>{
+          return (
+            row[newitem]
+            .toString()
+            .toLowerCase()
+            .indexOf(q.toLowerCase()) > -1
+          )
+        })
+        }
+  })
+};
 
 
   return (
@@ -65,18 +109,19 @@ function App() {
 
       <div className='inputs'>
       <p>Name</p>
-      <input type='text'></input>
+      <input type='text' value={q} onChange={(e) => {return setQ(e.target.value)}}></input>
       <p>User type</p>
-      <select>
-      <option >Employee</option>
-      <option >Programmer</option>
-      <option >Wizard</option>
+      <select onChange={(e) =>{return setUsertype(e.target.value)}}>
+      <option>All</option>
+      <option>Employee</option>
+      <option>Programmer</option>
+      <option>Wizard</option>
       </select>
       <button type='button'>Search</button>
       </div>
-
+     
       <div className='table'>
-        <Table data={data}/>
+        <Table data={search(data)}/>
       </div>
 
     </div>
