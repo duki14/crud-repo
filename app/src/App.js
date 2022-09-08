@@ -8,7 +8,7 @@ function App() {
   // data setter --> my data is defined within an empty array
   const [data, setData] = useState([]);
   // querry selector(for components)
-  const [q, setQ] = useState([]);
+  const [q, setQ] = useState("");
   // set complete number of users
   const [usertype, setUsertype] = useState(['All']);
   // data setter for dropdown --> specify keys for searching
@@ -66,7 +66,7 @@ function App() {
 
     return rows.filter((row) =>{
 
-      if(row.Usertype === usertype){
+      if(row.Usertype == usertype){
         return searchParam.some((newitem) =>{
           return (
             row[newitem]
@@ -76,7 +76,7 @@ function App() {
           )
         })
       }
-        else if(usertype === 'All'){
+        else if(usertype == 'All'){
           return searchParam.some((newitem) =>{
           return (
             row[newitem]
