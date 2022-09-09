@@ -1,6 +1,8 @@
 
 import './App.css';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+
 
 function App() {
 
@@ -94,15 +96,15 @@ function App() {
   <div className='main-container'>
   
     <div className='border-upper'>
-      <h1>Application</h1> 
+      <h1>Application.</h1> 
     </div>
 
 <div className='body-container'>
 
     <div className='toolbar-left'>
       <h3>Home</h3>
-      <h3>About</h3>
-      <h3>Contact</h3>
+      <Link to='/about'><h3>About</h3></Link>
+      <Link to='/contact'><h3>Contact</h3></Link>
     </div>
 
     <div className='text-container'>
@@ -131,5 +133,6 @@ function App() {
   </div>
   );
 }
+
 
 export default App;

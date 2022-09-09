@@ -18,11 +18,44 @@ align-items: left;
 
 }
 
+.border-upper-about {
+  height: 80px;
+  width: 1400px;
+  background-color: rgb(33,158,188);
+  display: flex;
+
+
+}
+
+.border-upper-contact {
+  height: 80px;
+  width: 1400px;
+  background-color: rgb(205,92,92);
+  display: flex;
+
+
+}
+
 .toolbar-left{
   width: 400px;
   height: 620px;
   background-color: rgb(253, 129, 98);
   
+}
+
+.toolbar-left-about {
+  width: 400px;
+  height: 620px;
+  background-color: rgb(142,202,230);
+
+
+}
+
+.toolbar-left-contact {
+  width: 400px;
+  height: 620px;
+  background-color: rgb(235, 230, 214);
+
 }
 
 
@@ -43,9 +76,33 @@ display: flex;
   
 }
 
+.text-container-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.text-container-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
 .body-container{
   display: inline-flex;
   
+}
+
+.body-container-about {
+  display: inline-flex;
+
+}
+
+.body-container-contact {
+  display: inline-flex;
+
 }
 
 .inputs{
