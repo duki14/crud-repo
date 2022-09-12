@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 
+
 function App() {
 
 
@@ -15,6 +16,47 @@ function App() {
   const [usertype, setUsertype] = useState(['All']);
   // data setter for dropdown --> specify keys for searching
   const [searchParam] = useState(['Name','Surname']);
+
+  const [addFormData, setAddFormData] = useState({
+    ID: '',
+    Name: '',
+    Surname: '',
+    Usertype: '',
+    CreatedDay: '',
+    City: '',
+    Adress: ''
+  });
+
+  const handleAddFormChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = {...addFormData};
+    newFormData[fieldName] = fieldValue;
+
+    setAddFormData(newFormData);
+  };
+
+  const handleAddFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newContact = {
+    ID : addFormData.ID,
+    Name: addFormData.Name,
+    Surname: addFormData.Surname,
+    Usertype: addFormData.Usertype,
+    CreatedDay: addFormData.CreatedDay,
+    City: addFormData.City,
+    Adress: addFormData.Adress
+    };
+
+    const newData = [...data, newContact];
+    setData(newData);
+
+  }
+
 
 
   // useEffect --> fire up my api data func (done when changes occur)
@@ -126,7 +168,21 @@ function App() {
         <Table data={search(data)}/>
       </div>
 
+      <div className='add'>
+      <form onSubmit={handleAddFormSubmit}>
+        <input type='text' name='ID' required='required' placeholder='enterID' onChange={handleAddFormChange}></input>
+        <input type='text' name='Name' required='required' placeholder='enterName' onChange={handleAddFormChange}></input>
+        <input type='text' name='Surname' required='required' placeholder='enterSurname'  onChange={handleAddFormChange}></input>
+        <input type='text' name='Usertype' required='required' placeholder='enterUsertype' onChange={handleAddFormChange}></input>
+        <input type='text' name='CreatedDay' required='required' placeholder='enterCreatedDay' onChange={handleAddFormChange}></input>
+        <input type='text' name='City' required='required' placeholder='enterCity' onChange={handleAddFormChange}></input>
+        <input type='text' name='Adress' required='required' placeholder='enterAdress' onChange={handleAddFormChange}></input>
+        <button type='submit'>Add</button>
+      </form>
+      </div>
+
     </div>
+
 
     </div>
 

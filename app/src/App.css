@@ -123,3 +123,9 @@ button{
     border-style: solid;
     border-width: 2px;
 }
+
+.add{
+  margin-top: 40px;
+  margin-right: 500px;
+  width: 40px;
+}
