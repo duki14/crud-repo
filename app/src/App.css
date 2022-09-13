@@ -118,6 +118,7 @@ display: flex;
   display:flex;
   margin: 30px;
   gap: 0.5rem;
+  
 }
 
 
@@ -156,7 +157,7 @@ display: flex;
 
 .table{
   
-    border-color: #c4c4c4;
+    border-color: #ddd;
     border-style: solid;
     border-width: 2px;
 }
@@ -172,4 +173,11 @@ display: flex;
 }
 
 
+input{
+  border: 2px solid #ddd;
+}
 
+
+select{
+  border-color: #ddd;
+}
