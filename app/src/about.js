@@ -15,9 +15,9 @@ function About() {
 <div className='body-container-about'>
 
     <div className='toolbar-left-about'>
-      <Link to='/app'><h3>Home</h3></Link>
+      <Link to='/app'style={{ textDecoration: 'none' }} ><h3>Home</h3></Link>
       <h3>About</h3>
-      <Link to='/contact'><h3>Contact</h3></Link>
+      <Link to='/contact'style={{ textDecoration: 'none' }} ><h3>Contact</h3></Link>
     </div>
 
     <div className='text-container-about'>

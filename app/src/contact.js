@@ -15,8 +15,8 @@ function Contact() {
 <div className='body-container-contact'>
 
     <div className='toolbar-left-contact'>
-      <Link to='/app'><h3>Home</h3></Link>
-      <Link to='/about'><h3>About</h3></Link>
+      <Link to='/app' style={{ textDecoration: 'none' }}><h3>Home</h3></Link>
+      <Link to='/about' style={{ textDecoration: 'none' }}><h3>About</h3></Link>
       <h3>Contact</h3>
     </div>
 

@@ -57,6 +57,17 @@ function App() {
 
   }
 
+  // delete handle logic --> assigned to button onClick()
+  // data.ID --> key(ID) from .json database 
+  const handleDelete = (contactID) => {
+    const newContacts = [...data];
+
+    const index = data.findIndex((item) => { return item.ID === contactID});
+
+    newContacts.splice(index, 1);
+
+    setData(newContacts);
+  }
 
 
   // useEffect --> fire up my api data func (done when changes occur)
@@ -134,6 +145,7 @@ function App() {
 };
 
 
+
   return (
   <div className='main-container'>
   
@@ -145,8 +157,8 @@ function App() {
 
     <div className='toolbar-left'>
       <h3>Home</h3>
-      <Link to='/about'><h3>About</h3></Link>
-      <Link to='/contact'><h3>Contact</h3></Link>
+      <Link to='/about' style={{ textDecoration: 'none' }} ><h3>About</h3></Link>
+      <Link to='/contact' style={{ textDecoration: 'none' }} ><h3>Contact</h3></Link>
     </div>
 
     <div className='text-container'>
@@ -161,28 +173,30 @@ function App() {
       <option>Programmer</option>
       <option>Wizard</option>
       </select>
-      <button type='button'>Search</button>
+      <button type='button' className='button-search'>Search</button>
       </div>
      
       <div className='table'>
-        <Table data={search(data)}/>
+        <Table data={search(data)} handleDelete={handleDelete}/>
       </div>
 
       <div className='add'>
       <form onSubmit={handleAddFormSubmit}>
-        <input type='text' name='ID' required='required' placeholder='enterID' onChange={handleAddFormChange}></input>
-        <input type='text' name='Name' required='required' placeholder='enterName' onChange={handleAddFormChange}></input>
-        <input type='text' name='Surname' required='required' placeholder='enterSurname'  onChange={handleAddFormChange}></input>
-        <input type='text' name='Usertype' required='required' placeholder='enterUsertype' onChange={handleAddFormChange}></input>
-        <input type='text' name='CreatedDay' required='required' placeholder='enterCreatedDay' onChange={handleAddFormChange}></input>
-        <input type='text' name='City' required='required' placeholder='enterCity' onChange={handleAddFormChange}></input>
-        <input type='text' name='Adress' required='required' placeholder='enterAdress' onChange={handleAddFormChange}></input>
-        <button type='submit'>Add</button>
+        <input type='text' name='ID' required='required' placeholder='enter ID' onChange={handleAddFormChange}></input>
+        <input type='text' name='Name' required='required' placeholder='enter Name' onChange={handleAddFormChange}></input>
+        <input type='text' name='Surname' required='required' placeholder='enter Surname'  onChange={handleAddFormChange}></input>
+        <input type='text' name='Usertype' required='required' placeholder='enter Usertype' onChange={handleAddFormChange}></input>
+        <input type='text' name='CreatedDay' required='required' placeholder='enter CreatedDay' onChange={handleAddFormChange}></input>
+        <input type='text' name='City' required='required' placeholder='enter City' onChange={handleAddFormChange}></input>
+        <input type='text' name='Adress' required='required' placeholder='enter Adress' onChange={handleAddFormChange}></input>
+        <button type='submit' className='button-crud'>Add</button>
+        <button type='submit' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
+        
       </form>
       </div>
 
-    </div>
 
+    </div>
 
     </div>
 
