@@ -2,6 +2,9 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
+
+
+
 function About() {
 
 
@@ -21,6 +24,11 @@ function About() {
     </div>
 
     <div className='text-container-about'>
+      <h1 className='about-header'>React</h1>
+      <p className='about-text'>ver. 18.2.0</p>
+     
+      
+
 
   
 

@@ -70,15 +70,16 @@ function App() {
   }
 
 
-  // useEffect --> fire up my api data func (done when changes occur)
-  useEffect(() =>{
+  // useEffect --> fire up my api data func (done when changes occur) 
+  const onSearch = () => {
     // input url that contains .json data in our local state / or has api key
     fetch('http://localhost:3000/data')
     // takes an input function = the response that comes from our server/turns http response data into .json data
     .then(response => {return response.json()})
     // return our previous function input .json data and gives it to our app components
     .then((json) => {return setData(json)})
-  },[]);
+    
+    };
 
 
   // table component
@@ -173,7 +174,7 @@ function App() {
       <option>Programmer</option>
       <option>Wizard</option>
       </select>
-      <button type='button' className='button-search'>Search</button>
+      <button type='button' className='button-search'  value={q} onClick={(e) => {return onSearch(e.target.value)}}>Search</button>
       </div>
      
       <div className='table'>
@@ -182,11 +183,11 @@ function App() {
 
       <div className='add'>
       <form onSubmit={handleAddFormSubmit}>
-        <input type='text' name='ID' required='required' placeholder='enter ID' onChange={handleAddFormChange}></input>
+        <input type='text' name='ID' required='required' placeholder='enter Id' onChange={handleAddFormChange}></input>
         <input type='text' name='Name' required='required' placeholder='enter Name' onChange={handleAddFormChange}></input>
         <input type='text' name='Surname' required='required' placeholder='enter Surname'  onChange={handleAddFormChange}></input>
         <input type='text' name='Usertype' required='required' placeholder='enter Usertype' onChange={handleAddFormChange}></input>
-        <input type='text' name='CreatedDay' required='required' placeholder='enter CreatedDay' onChange={handleAddFormChange}></input>
+        <input type='text' name='CreatedDay' required='required' placeholder='enter Created Day' onChange={handleAddFormChange}></input>
         <input type='text' name='City' required='required' placeholder='enter City' onChange={handleAddFormChange}></input>
         <input type='text' name='Adress' required='required' placeholder='enter Adress' onChange={handleAddFormChange}></input>
         <button type='submit' className='button-crud'>Add</button>
