@@ -26,8 +26,10 @@ function About() {
     </div>
 
     <div className='text-container-about'>
-      <h2 className='about-header'>+ Functional data - table</h2>
+      <img src={require('../src/gif.gif')} className='about-image'></img>
+      <h2 className='about-header'>+ Functional DataTable</h2>
       <p className='about-text'>made in React ver. 18.2.0</p>
+      
       
       
       

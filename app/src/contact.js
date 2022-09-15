@@ -9,7 +9,7 @@ function Contact() {
   <div className='main-container'>
   
     <div className='border-upper-contact'>
-      <h1>Mail us.</h1> 
+      <h1>Mail me.</h1> 
     </div>
 
 <div className='body-container-contact'>
@@ -21,6 +21,9 @@ function Contact() {
     </div>
 
     <div className='text-container-contact'>
+      <img src={require('../src/mail2.gif')} className='contact-image'></img>
+      <h2 className='contact-header'>+ Email</h2>
+      <p className='contact-text'>damjan.jelisavcic14@gmail.com</p>
 
   
 
