@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 
 
 
+
+
 function About() {
 
 
@@ -26,6 +28,8 @@ function About() {
     <div className='text-container-about'>
       <h2 className='about-header'>+ Functional data - table</h2>
       <p className='about-text'>made in React ver. 18.2.0</p>
+      
+      
      
       
 
