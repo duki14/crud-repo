@@ -24,8 +24,8 @@ function About() {
     </div>
 
     <div className='text-container-about'>
-      <h1 className='about-header'>React</h1>
-      <p className='about-text'>ver. 18.2.0</p>
+      <h2 className='about-header'>+ Functional data - table</h2>
+      <p className='about-text'>made in React ver. 18.2.0</p>
      
       
 

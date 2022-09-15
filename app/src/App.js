@@ -1,12 +1,14 @@
 
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+
 
 
 
 function App() {
 
+  
 
   // data setter --> my data is defined within an empty array
   const [data, setData] = useState([]);
@@ -39,6 +41,7 @@ function App() {
     setAddFormData(newFormData);
   };
 
+  // add button functionality
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
 
@@ -70,7 +73,7 @@ function App() {
   }
 
 
-  // linked component --> for button functionality
+  // linked component --> for search button functionality
   const onSearch = () => {
     // input url that contains .json data in our local state / or has api key
     fetch('http://localhost:3000/data')
@@ -147,6 +150,7 @@ function App() {
 
 
 
+
   return (
   <div className='main-container'>
   
@@ -191,7 +195,7 @@ function App() {
         <input type='text' name='City' required='required' placeholder='enter City' onChange={handleAddFormChange}></input>
         <input type='text' name='Adress' required='required' placeholder='enter Adress' onChange={handleAddFormChange}></input>
         <button type='submit' className='button-crud'>Add</button>
-        <button type='submit' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
+        <button type='button' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
         
       </form>
       </div>
