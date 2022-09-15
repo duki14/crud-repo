@@ -70,7 +70,7 @@ function App() {
   }
 
 
-  // useEffect --> fire up my api data func (done when changes occur) 
+  // linked component --> for button functionality
   const onSearch = () => {
     // input url that contains .json data in our local state / or has api key
     fetch('http://localhost:3000/data')
