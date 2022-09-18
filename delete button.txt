@@ -1,0 +1,1 @@
+radi --> input polja za dodavanje moraju biti prazna
