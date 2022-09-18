@@ -1,3 +1,0 @@
-npm start
-
-app home --> http://localhost:3001/app 

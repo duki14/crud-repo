@@ -1,8 +1,7 @@
 
 import './App.css';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-
 
 
 
@@ -17,7 +16,7 @@ function App() {
   const [q, setQ] = useState("");
   // set complete number of users
   const [usertype, setUsertype] = useState(['All']);
-  // data setter for dropdown --> specify keys for searching
+  // data setter for dropdown --> specify keys for searching (Data.Name && Data.Surname)
   const [searchParam] = useState(['Name','Surname']);
 
   const [addFormData, setAddFormData] = useState({
@@ -57,8 +56,9 @@ function App() {
     };
 
     const newData = [...data, newContact];
+    
     setData(newData);
-
+    
   }
 
   // delete handle logic --> assigned to button onClick()
@@ -74,10 +74,20 @@ function App() {
   }
 
 
+  /* no search button functionality code snippet for .fetch()
+  useEffect(() => {
+
+    fetch()
+
+  },[])  */
+
+  // url link
+  const url = 'http://localhost:3000/data';
+
   // linked component --> for search button functionality
   const onSearch = () => {
     // input url that contains .json data in our local state / or has api key
-    fetch('http://localhost:3000/data')
+    fetch(url)
     // takes an input function = the response that comes from our server/turns http response data into .json data
     .then(response => {return response.json()})
     // return our previous function input .json data and gives it to our app components
@@ -151,7 +161,6 @@ function App() {
 
 
 
-
   return (
   <div className='main-container'>
   
@@ -197,7 +206,6 @@ function App() {
         <input type='text' name='Adress' required='required' placeholder='enter Adress' onChange={handleAddFormChange}></input>
         <button type='submit' className='button-crud'>Add</button>
         <button type='button' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
-        
       </form>
       </div>
 
@@ -212,3 +220,4 @@ function App() {
 
 
 export default App;
+

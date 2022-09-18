@@ -1,7 +1,0 @@
-git status  --> check status
-
-git add .  --> prepare new or changed files to be commited
-
-git commit -m "name"  --> commit changed or new files
-
-git push -u origin master   --> push changes on master branch (github)

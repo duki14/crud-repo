@@ -1,3 +1,0 @@
-json-server db.json --> for startup 
-
-http://localhost:3000/data --> .json data location
