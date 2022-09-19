@@ -21,7 +21,7 @@ function Contact() {
     </div>
 
     <div className='text-container-contact'>
-      <img src={require('../src/mail2.gif')} className='contact-image'></img>
+      <img src={require('../src/mail2.gif')} className='contact-image' alt='mail-gif'></img>
       <h2 className='contact-header'>+ Email</h2>
       <p className='contact-text'>damjan.jelisavcic14@gmail.com</p>
 
