@@ -16,8 +16,8 @@ function App() {
   const [q, setQ] = useState("");
   // set complete number of users
   const [usertype, setUsertype] = useState(['All']);
-  // data setter for dropdown --> specify keys for searching (Data.Name && Data.Surname)
-  const [searchParam] = useState(['Name','Surname']);
+  // data setter for dropdown & search bar --> specify keys for searching (Data.Name && Data.Surname)
+  const [searchParam] = useState(['Name']);
 
   const [addFormData, setAddFormData] = useState({
     ID: '',
@@ -41,7 +41,7 @@ function App() {
     setAddFormData(newFormData);
   };
 
-  // add button functionality
+  // add form functionality --> good piece of reusable code
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
 
@@ -58,20 +58,40 @@ function App() {
     const newData = [...data, newContact];
     
     setData(newData);
-    
+
   }
+
 
   // delete handle logic --> assigned to button onClick()
   // data.ID --> key(ID) from .json database 
   const handleDelete = (contactID) => {
+    
     const newContacts = [...data];
 
     const index = data.findIndex((item) => { return item.ID === contactID});
 
     newContacts.splice(index, 1);
 
-    setData(newContacts);
+    setData(newContacts); 
+    
+   /*
+    const items = data['items'];
+
+    const requestOptions = {
+      method: "DELETE"
+    }
+    fetch(`http://localhost:3000/data${item.ID}`, requestOptions)
+    .then((response) => {
+      if (response.ok){
+        const idx = items.indexOf(item);
+        items.splice(idx, 1);
+        setData({items: data});
+      }
+    }) */
+
+
   }
+
 
 
   /* no search button functionality code snippet for .fetch()
@@ -89,9 +109,9 @@ function App() {
     // input url that contains .json data in our local state / or has api key
     fetch(url)
     // takes an input function = the response that comes from our server/turns http response data into .json data
-    .then(response => {return response.json()})
+    .then((response) =>  response.json())
     // return our previous function input .json data and gives it to our app components
-    .then((json) => {return setData(json)})
+    .then((json) => setData(json))
     
     };
 
@@ -220,4 +240,3 @@ function App() {
 
 
 export default App;
-

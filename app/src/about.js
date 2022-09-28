@@ -20,7 +20,7 @@ function About() {
 <div className='body-container-about'>
 
     <div className='toolbar-left-about'>
-      <Link to='/app'style={{ textDecoration: 'none' }} ><h3>Home</h3></Link>
+      <Link to='/'style={{ textDecoration: 'none' }} ><h3>Home</h3></Link>
       <h3>About</h3>
       <Link to='/contact'style={{ textDecoration: 'none' }} ><h3>Contact</h3></Link>
     </div>

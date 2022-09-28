@@ -1,51 +1,46 @@
 .main-container{
-height: 700px;
-width: 1400px;
-background-color: rgb(250, 244, 244);
-display: flex;
-flex-direction: column;
-align-items: left;
-  
+  background-color: rgb(250, 244, 244);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
   
 }
 
 .border-upper{
   height: 80px;
-  width: 1400px;
+  width: 100%;
   background-color: rgb(253, 185, 82);
   display:flex;
-
 
 }
 
 .border-upper-about {
   height: 80px;
-  width: 1400px;
+  width: 100%;
   background-color: rgb(33,158,188);
   display: flex;
-
 
 }
 
 .border-upper-contact {
   height: 80px;
-  width: 1400px;
+  width: 100%;
   background-color: rgb(205,92,92);
   display: flex;
-
 
 }
 
 .toolbar-left{
   width: 400px;
-  height: 620px;
+  height: 610px;
   background-color: rgb(253, 129, 98);
   
 }
 
 .toolbar-left-about {
   width: 400px;
-  height: 620px;
+  height: 610px;
   background-color: rgb(142,202,230);
 
 
@@ -53,7 +48,7 @@ align-items: left;
 
 .toolbar-left-contact {
   width: 400px;
-  height: 620px;
+  height: 610px;
   background-color: rgb(240, 128, 128);
 
 }
@@ -79,9 +74,12 @@ h3:active {
 
 
 .text-container{
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 70px;
   
 }
 
@@ -89,8 +87,9 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 250px;
-  margin-top: 35px;
+  height: 100%;
+  width: 100%;
+  margin-top: 75px;
 
 }
 
@@ -98,8 +97,9 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 250px;
-  margin-top: 35px;
+  height: 100%;
+  width: 100%;
+  margin-top: 65px;
 
 }
 
@@ -147,7 +147,7 @@ display: flex;
 .button-crud{
   background-color: greenyellow;
     border-style: hidden;
-    width: 172px;
+    width: 165px;
     height: 20px;
     margin-left: 5px;
     cursor: pointer;
@@ -175,8 +175,9 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 48%;
+  width: 50%;
   margin-top: 35px;
+  margin-left: 90px;
   
 }
 
@@ -196,7 +197,11 @@ select{
 }
 
 .contact-image{
-  width: 500px;
+  width: 420px;
+}
+
+.about-image {
+  width: 420px;
 }
 
 .contact-text{
