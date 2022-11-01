@@ -3,6 +3,8 @@ app-datatable doc
 
 1# json server start /--------------------------------------/
 
+command prompt --> select json-server-master
+
 json-server db.json --> for startup 
 
 http://localhost:3000/data --> .json data location
@@ -13,6 +15,8 @@ http://localhost:3000/data --> .json data location
 
 2# starting app /--------------------------------------/
 
+command prompt --> select file app
+
 npm start
 
 app home --> http://localhost:3001 
@@ -22,6 +26,8 @@ app home --> http://localhost:3001
 
 
 3# git commands /--------------------------------------/
+
+command prompt --> select complete directory
 
 git status  --> check status
 
