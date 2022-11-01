@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -73,22 +73,6 @@ function App() {
     newContacts.splice(index, 1);
 
     setData(newContacts); 
-    
-    /*
-    const items = data['item'];
-
-    const requestOptions = {
-      method: "DELETE"
-    }
-    fetch(`http://localhost:3000/data${item.ID}`, requestOptions)
-    .then((response) => {
-      if (response.ok){
-        const idx = items.indexOf(item);
-        items.splice(idx, 1);
-        setData({items: data});
-      }
-    }) 
-   */
 
   }
 
