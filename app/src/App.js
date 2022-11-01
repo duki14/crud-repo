@@ -74,8 +74,8 @@ function App() {
 
     setData(newContacts); 
     
-   /*
-    const items = data['items'];
+    /*
+    const items = data['item'];
 
     const requestOptions = {
       method: "DELETE"
@@ -87,8 +87,8 @@ function App() {
         items.splice(idx, 1);
         setData({items: data});
       }
-    }) */
-
+    }) 
+   */
 
   }
 
@@ -116,6 +116,8 @@ function App() {
     };
 
 
+
+
   // table component
   function Table({data}){
 
@@ -131,7 +133,7 @@ function App() {
          </thead>
          <tbody>
           {data.map((row) =>{
-            return <tr>{columns.map((column1) =>{return <td>{row[column1]}</td>})}</tr>
+            return <tr>{columns.map((column1) =>{return <td>{row[column1]}</td>})}</tr>   
           })}
          </tbody>
       </table>
@@ -140,7 +142,8 @@ function App() {
 
   }
 
-   
+
+
   // search logic --> indexOf(q) > -1  matches our two strings (search input with db.json data) and returns the first character(letter) that matches our input
   // if there is no search match --> we get negative one (-1)
   // Name (parameter) --> has to match our .json data objet key
