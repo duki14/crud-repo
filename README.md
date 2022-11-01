@@ -15,7 +15,7 @@ http://localhost:3000/data --> .json data location
 
 npm start
 
-app home --> http://localhost:3001/app 
+app home --> http://localhost:3001 
 
 
 
