@@ -29,6 +29,7 @@ function App() {
     Adress: ''
   });
 
+  // setting number of entries (.json data) shown by default --> currently (5)
   const [paginate, setpaginate] = useState(5);
  
 
@@ -70,16 +71,16 @@ function App() {
 
   // delete handle logic --> assigned to button onClick()
   // data.ID --> key(ID) from .json database 
-  const handleDelete = (contactID) => {
+  const handleDelete = (contactId) => {
     
     const newContacts = [...data];
 
-    const index = data.findIndex((item) => { return item.ID === contactID});
+    const index = data.findIndex((contact) => { return contact.ID === contactId});
 
     newContacts.splice(index, 1);
 
     setData(newContacts); 
-
+    
   }
 
 
@@ -174,6 +175,11 @@ function App() {
 };
 
 
+// pagination button logic --> set to load additional 5 entries
+const loadMore = () => {
+  setpaginate((prevValue) => prevValue + 3);
+};
+
 
   return (
   <div className='main-container'>
@@ -222,6 +228,8 @@ function App() {
         <button type='button' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
       </form>
       </div>
+      
+      <button className='button-crud' onClick={loadMore}>Load More</button>
 
     </div>
 
