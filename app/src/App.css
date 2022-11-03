@@ -33,14 +33,14 @@
 
 .toolbar-left{
   width: 400px;
-  height: 610px;
+  height: 670px;
   background-color: rgb(253, 129, 98);
   
 }
 
 .toolbar-left-about {
   width: 400px;
-  height: 610px;
+  height: 670px;
   background-color: rgb(142,202,230);
 
 
@@ -48,7 +48,7 @@
 
 .toolbar-left-contact {
   width: 400px;
-  height: 610px;
+  height: 670px;
   background-color: rgb(240, 128, 128);
 
 }

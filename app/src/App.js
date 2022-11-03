@@ -12,13 +12,13 @@ function App() {
 
   // data setter --> my data is defined within an empty array
   const [data, setData] = useState([]);
-  // querry selector(for components)
+  // querry selector(for searching my components)
   const [q, setQ] = useState("");
   // set complete number of users
   const [usertype, setUsertype] = useState(['All']);
   // data setter for dropdown & search bar --> specify keys for searching (Data.Name && Data.Surname)
   const [searchParam] = useState(['Name']);
-
+  // setter for adding users (add button functionality)
   const [addFormData, setAddFormData] = useState({
     ID: '',
     Name: '',
@@ -28,6 +28,12 @@ function App() {
     City: '',
     Adress: ''
   });
+
+  const [paginate, setpaginate] = useState(5);
+ 
+
+
+
 
   const handleAddFormChange = (event) => {
     event.preventDefault();
@@ -79,6 +85,7 @@ function App() {
 
 
   /* no search button functionality code snippet for .fetch()
+
   useEffect(() => {
 
     fetch()
@@ -90,6 +97,7 @@ function App() {
 
   // linked component --> for search button functionality
   const onSearch = () => {
+    
     // input url that contains .json data in our local state / or has api key
     fetch(url)
     // takes an input function = the response that comes from our server/turns http response data into .json data
@@ -102,7 +110,7 @@ function App() {
 
 
 
-  // table component
+  // table components --> posting all my .json data
   function Table({data}){
 
     const columns = data[0] && Object.keys(data[0]);
@@ -127,11 +135,10 @@ function App() {
   }
 
 
-
   // search logic --> indexOf(q) > -1  matches our two strings (search input with db.json data) and returns the first character(letter) that matches our input
   // if there is no search match --> we get negative one (-1)
-  // Name (parameter) --> has to match our .json data objet key
-  // Usertype (parameter) --> has to match our .json data objet key
+  // Name (parameter) --> has to match our .json data object key
+  // Usertype (parameter) --> has to match our .json data object key
   /* only searchbar functionality
   const search = (rows) =>{
     return rows.filter((row) =>{
@@ -199,7 +206,7 @@ function App() {
       </div>
      
       <div className='table'>
-        <Table data={search(data)} handleDelete={handleDelete}/>
+        <Table data={search(data).slice(0,paginate)} handleDelete={handleDelete}/>
       </div>
 
       <div className='add'>
@@ -215,7 +222,6 @@ function App() {
         <button type='button' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
       </form>
       </div>
-
 
     </div>
 
