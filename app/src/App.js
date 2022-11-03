@@ -28,7 +28,6 @@ function App() {
     City: '',
     Adress: ''
   });
-
   // setting number of entries (.json data) shown by default --> currently (5)
   const [paginate, setpaginate] = useState(5);
  
@@ -175,10 +174,11 @@ function App() {
 };
 
 
-// pagination button logic --> set to load additional 5 entries
+// pagination button logic --> set to load additional (3) entries
 const loadMore = () => {
-  setpaginate((prevValue) => prevValue + 3);
+  setpaginate((previousValue) => previousValue + 3);
 };
+
 
 
   return (
