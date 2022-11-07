@@ -37,5 +37,7 @@ git commit -m "name"  --> commit changed or new files
 
 git push -u origin master   --> push changes on master branch (github)git
 
+### for errors --> git pull --> start cycle from the beginning
+
 
 
