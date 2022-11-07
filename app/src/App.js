@@ -71,15 +71,18 @@ function App() {
   // delete handle logic --> assigned to button onClick()
   // data.ID --> key(ID) from .json database 
   const handleDelete = (contactId) => {
-    
+
     const newContacts = [...data];
 
     const index = data.findIndex((contact) => { return contact.ID === contactId});
 
     newContacts.splice(index, 1);
 
-    setData(newContacts); 
+    setUsertype(newContacts); 
     
+
+    // setUsertype(data.filter((item) => item !== contactId))
+
   }
 
 
@@ -176,7 +179,7 @@ function App() {
 
 // pagination button logic --> set to load additional (3) entries
 const loadMore = () => {
-  setpaginate((previousValue) => previousValue + 3);
+  setpaginate((previousValue) => previousValue + 5);
 };
 
 
@@ -225,7 +228,7 @@ const loadMore = () => {
         <input type='text' name='City' required='required' placeholder='enter City' onChange={handleAddFormChange}></input>
         <input type='text' name='Adress' required='required' placeholder='enter Adress' onChange={handleAddFormChange}></input>
         <button type='submit' className='button-crud'>Add</button>
-        <button type='button' className='button-crud' onClick={() => {return handleDelete(data.ID)}}>Delete</button>
+        <button type='button' className='button-crud' onClick={() => {return handleDelete(data)}}>Delete</button>
       </form>
       </div>
       
@@ -241,3 +244,6 @@ const loadMore = () => {
 
 
 export default App;
+
+
+
